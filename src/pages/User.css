@@ -1,0 +1,60 @@
+.container_use{
+    width: 100%;
+    height: 40rem;
+    
+    display: flex;
+}
+.title{
+    width: 50%; 
+    height: 100%;
+    border-right-width: 0.1px;
+    border-right-style:solid;
+    display: inline;
+}
+.func{
+    width: 50%;
+    margin-top: 10rem;
+   
+}
+.span_data{
+    line-height: 13rem;
+    width: 50%;
+   
+    margin-top: 25%;
+    margin-left: 3rem;
+    display: block  ;
+    justify-content: center;
+}
+.span_data p{
+    font-size: 40px;
+    font-weight: 550;
+}
+.custom_table{
+    width: 80%;
+    height: 1rem;
+    background-color: #515050;
+    border-radius: 10px;
+}
+.form_input{
+   
+    width: 100%;
+    margin:  auto;
+    line-height: 5rem;
+}
+.custom_input{
+    width: 70%;
+    height: 40px;
+    position: absolutes ;
+    background-color: #C4C4C4;
+    margin-left: 8rem;
+    font-size: medium;
+    font-weight: 200;
+
+}
+.custom_btn{
+    width: 150px;
+    height: 55px;
+    background-color: black;
+    margin-left: 8rem;
+    color: aliceblue;
+}

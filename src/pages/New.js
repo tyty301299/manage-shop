@@ -8,30 +8,35 @@ import { BsCart2,BsSearch,BsPerson } from "react-icons/bs";
 function New(){
     const [posts,setPosts] = useState([])
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts').then(res =>{
-            console.log(res)
-            setPosts(res.data)
-        }).catch(err=>{
-            console.log(err)
-        }
-        )
+        fetch(`http://127.0.0.1:5000`)
+        .then(res => res.json())
+        .then(res => {
+            setPosts(res)
+        })
+        // axios.get('http://127.0.0.1:5000/').then(res =>{
+        //     console.log(res)
+        //     setPosts(res.data)
+        // }).catch(err=>{
+        //     console.log(err)
+        // }
+        // )
     },[])
     return(
         <div className="container">
             <div id="product">
           
           {
-                  posts.map(post =>(
+                  posts.map((post,index) =>(
                       
-                      <div className="card">
-                          <Link to={`/detail?id=${post.id}`}>
-                          <img src={logo}/>
+                      <div className="card" key={index}>
+                          <Link to={`/detail?id=${post.ID_product}`}>
+                          <img src={post.image}/>
                           </Link>
                          <div className="content">
-                           <span key={post.id}>1</span>
-                          </div>
-                          
-                         
+                           <p key={post.ID_product}>{post.price} VNĐ</p>
+                           <span key={post.ID_product}>{post.name_product}</span>
+
+                          </div>   
                       </div>
                   ))       
           }

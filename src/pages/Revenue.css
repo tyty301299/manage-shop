@@ -14,3 +14,11 @@
 .container_second{
     
 }
+.list{
+    width: 100%;
+}
+.func_button{
+
+    margin-left: 30px;
+    font-size: 30;
+}

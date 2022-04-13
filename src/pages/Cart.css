@@ -1,0 +1,80 @@
+.containercart{
+  
+    width: 100%;
+    justify-content: center; 
+     display: flex;
+}
+.thanhtoan{
+    width: 50%;
+    height: 100%;
+   
+    align-items: center;
+    justify-items: center;
+}
+.thanhtoancon{
+    width: 60%;
+    height: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: aliceblue;
+    
+    margin-left: 25%;
+    margin-top: 30%;
+}
+.listsp{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  
+}
+.container_button_cart{
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+}
+.container_button_cart span {
+    margin-left: 25%;
+    font-weight: bolder;
+    font-size: 25px;
+    
+}
+.button_cart{
+    width: 40%;
+    height: 40%;
+    margin: 5%;
+    background-color: black;
+    font-style: normal;
+    font-size: bold;
+    color:aliceblue;
+}
+.item_cart{
+    height: 15%;
+    width: 70%;
+    background-color: beige;
+    display: flex;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.item_sp{
+    width: 50%;
+    height: 100%;
+    display: table-column;
+    line-height: 30px;
+}
+.imageclass{
+    width: 40%;
+    height: 100%;
+    
+}
+.imageclass img {
+    width: 100%;
+    height: 100%;
+}
+.item_cancle{
+    width:10%;
+    font-weight: bold;
+}

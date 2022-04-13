@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './Revenue.css';
 import {Chart as ChartJs, Tooltip, Title, ArcElement, Legend} from 'chart.js';
 import { Doughnut, Pie } from 'react-chartjs-2';
 import 'react-calendar/dist/Calendar.css';
@@ -11,13 +10,37 @@ ChartJs.register(
 
 
 function Revenue() {
- const [date,setDate] = useState(new Date())
 
- const strDate = date.getDate() +"/"+String(date.getMonth()+1) + "/" +date.getFullYear();
+ const [date,setDate] = useState(new Date())
+ const strDate = date.getDate()+"/"+String(date.getMonth()+1)+"/"+date.getFullYear();
+ const [posts,setPosts] = useState([])
+ const arrdata = []
+ const lablebd = []
+ const datadb = []
+ useEffect(()=>{
+     if(localStorage.getItem('user')!=null){
+        
+         fetch(`http://127.0.0.1:5000/revenue`)
+             .then(res => res.json())
+             .then(res => {
+                 setPosts(res)
+             })
+     }
+
+ },[])
+  posts.forEach(item => {
+    if(item.date === strDate){
+      arrdata.push(item)
+    }
+  })
+  arrdata.forEach(item => {
+    lablebd.push(item.product.name_product)
+    datadb.push(item.product.price*item.quantity)
+  })
 
   const [data, setData] = useState({
     datasets: [{
-        data: [Number(date.getDate())*10, 20, 30],
+        data: datadb,
         backgroundColor:[
           'red',
           'blue',
@@ -25,78 +48,63 @@ function Revenue() {
         ]
     },
   ],
-  labels: [
-      '1',
-      '2',
-      '3'
-  ], 
+  labels: lablebd, 
 });
-console.log(data);
+console.log(arrdata)
+console.log(lablebd)
+console.log(datadb)
 const onchange = date => {
   console.log(strDate)
     setDate(date)
     const test = {
       datasets: [{
-          data: [Number(date.getDate())*10, 20, 30],
+          data: datadb,
           backgroundColor:[
             'red',
-            'blue',
-            'yellow'
+    
           ]
       },
     ],
-    labels: [
-        '1',
-        '2',
-        '3'
-    ], 
+    labels: lablebd, 
   }
     setData(test)
 };
-
-//   useEffect(()=> {
-//     const fetchData = () =>  {
-//       fetch('https://jsonplaceholder.typicode.com/users').then((data) => {
-//         const res = data.json();
-//         return res
-//       }).then((res) => {
-//         console.log("resss", res)
-//         const label = [];
-//         const data = [];
-//         for(var i of res) {
-//             label.push(i.name);
-//             data.push(i.id)
-//         }
-//         setData(
-//           {
-//             datasets: [{
-//                 data:data,
-//                 backgroundColor:[
-//                   'red',
-//                   'blue',
-//                   'yellow'
-//                 ]
-//             },
-//           ],
-//           labels:label, 
-//         }
-//         )
-
-//       }).catch(e => {
-//         console.log("error", e)
-//       }) 
-//     }
-//   fetchData();
-//   }, [])
+console.log(posts)
   return (
     <div className='container'>
- <div className="container_first">
+    <div className="container_first">
         <Calendar onChange={onchange} value={date}/>
         <div className='container_second'>
     <Pie data={data}/>
+    
     </div>
     </div>
-
+    <div className='list'>
+    {
+                 arrdata.map(post =>(
+                    <div className="container_list">
+                    <div className="iamge_list">
+                    <img src={post.product.image} className="image_creter"/>
+                    </div>
+                    <div className="goods">
+                          <p className="titlefirst">{post.product.name_product}</p>
+                          <p className="titlesecond">{post.color} / {post.size}</p>
+                          <p>{post.quantity} / {post.price}</p>
+                    </div>
+                    <div className="customer">
+                      <p className="titlefirst">{post.user.name}</p>
+                      <p className="titlesecond">Địa chỉ : {post.user.adders}</p>
+                      <p>Số điện thoại : {post.user.SDT}</p>
+    
+                    </div>
+                    <div className="func_button">
+                       <p>{strDate}</p>
+                    </div>
+                </div>
+                ))
+            }
+    </div>
+   
     </div>
    
   );

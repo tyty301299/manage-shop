@@ -10,10 +10,14 @@ import User from "../pages/User";
 import Trousers from "../pages/Trousers";
 import Detail from "../pages/Detail";
 import Revenue from "../pages/Revenue";
+import Browselist from "../pages/ Browselist"
+import InsertData from "../pages/InsertData"
 function Role(){
     return(
         <Switch>
             <Route path="/revenue"  component ={Revenue}/>
+            <Route path="/browselist"  component ={Browselist}/>
+            <Route path="/instertdata" component={InsertData}/>
             <Route path="/" exact component ={New}/>
             <Route path="/detail" component ={Detail}/>
             <Route path="/shirt" component ={Shirt}/>
@@ -22,8 +26,6 @@ function Role(){
             <Route path="/trousers" component ={Trousers}/>
             <Route path="/user" component ={User}/>
             <Route path="/cart" component ={Cart}/>
-            
-        
         </Switch>
     )
 }

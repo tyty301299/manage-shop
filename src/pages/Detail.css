@@ -1,16 +1,27 @@
-.container{
+.containerdetail{
+  
     width: 100%;
-    display: flex;
+    justify-content: center; 
+     display: flex;
+}
+.custom_button{
+    height: 50px;
+    width: 400px;
+    color: #FFFFFF;
+    background-color: black ;
+    font-weight: bold;
+    margin-top: 50px;
+    font-size: small;
 }
 .data_image{
     width: 40rem;
     height: 60rem;
-    background-color: aqua;
+  
 }
 .datatext{
     width: 40rem;
     height: 80rem;
-    background-color: aquamarine;
+ 
     display:flex;
     margin-left: 1rem;
     margin-top: 5rem;
@@ -34,10 +45,25 @@
     height: 2rem;
     background-color: antiquewhite;
     border-radius: 1rem;
+    border-width: 1px;
+    border-color: black;
+    border-style: outset;
+    margin-left: 20px;
+}
+.ecli_color_first{
+    width: 2rem;
+    height: 2rem;
+    background-color: antiquewhite;
+    border-radius: 1rem;
+    border-width: 1px;
+    border-color: black;
+    border-style: outset;
 }
 .container_ecli{
+    margin-top: 30px;
     display: flex;
     line-height: 4rem;
+    width: 100%;
     
 }
 .size_card{
@@ -63,4 +89,9 @@
     justify-content: center;
     background-color: black;
     color: #FFFFFF;
+}
+.container_ecli_tmp{
+    width: 100%;
+    margin-top: 170px;
+    line-height: 40px;
 }

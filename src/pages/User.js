@@ -8,7 +8,20 @@ function User(){
     const [use,setUse] = useState(undefined)
     const [pass,setPass] = useState(undefined)
     const login = () => {
-       
+        const requestOptions = {
+            method: 'POST',
+            body: JSON.stringify({
+              'email': use,
+              'pass': pass,
+            })};
+      
+          fetch('http://127.0.0.1:5000/login', requestOptions)
+              .then(response => response.json())
+              .then(data => {
+                const setjson=JSON.stringify(data);
+                localStorage.setItem("user", setjson);
+                window.location = '/'
+              });
         console.log(use)
         console.log(pass)   
     }

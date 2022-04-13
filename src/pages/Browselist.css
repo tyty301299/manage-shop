@@ -1,0 +1,54 @@
+.container_list{
+    width: 100%;
+    display: flex;
+} 
+.iamge_list{
+    width: 30%;
+   
+    justify-content: center;
+    text-align: center;
+    
+}
+.iamge_list img{
+        width: 50%;
+        height: 60%;
+    
+}
+.goods{
+ width: 30%;
+
+ line-height: 30px;
+ 
+}
+.customer{
+    line-height: 30px;
+    width: 30%;
+    
+    
+   
+}
+.func_button{
+    line-height: 70px;
+    width: 20%;
+   
+   
+}
+.button_list{
+    width: 70%;
+    height: 50px;
+    color:white;
+    background-color: #479A5F;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.titlefirst{
+    font-weight: bold;
+    font-size: 24px;
+  
+}
+.titlesecond{
+    color: #C4C4C4;
+    font-size: 18px;
+    
+}

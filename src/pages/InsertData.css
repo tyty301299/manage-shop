@@ -1,0 +1,24 @@
+.div_insert{
+    margin-left:30%;
+}
+.table_layout{
+    height: 200px;
+    width: 500px;
+}
+.input_text{
+    background-color: #C4C4C4;
+    height: 50px;
+    width: 300px;
+}
+.btn_insert{
+    background-color: #479A5F;
+    font-weight: bold;
+    font-size: 30px;
+    color: aliceblue;
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+}
+.form_input{
+   
+}
